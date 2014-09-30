@@ -7,15 +7,15 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-	<import resource="classpath:test-job1.xml" />
-	<import resource="classpath:test-job2.xml" />
-	<import resource="classpath:test-job3.xml" />
+	<import resource="classpath:job1.xml" />
+	<import resource="classpath:job2.xml" />
+	<import resource="classpath:job3.xml" />
 	
 	<bean id="jobGroup1" class="com.talentica.job4j.model.JobGroup">
 		<property name="jobList">
 			<list>
-				<!-- <ref bean="testJob1"/> -->
-				<ref bean="testJob2"/>
+				<!-- <ref bean="job1"/> -->
+				<ref bean="job2"/>
 			</list>
 		</property>
 	</bean>
@@ -23,7 +23,7 @@
 	<bean id="jobGroup2" class="com.talentica.job4j.model.JobGroup">
 		<property name="jobList">
 			<list>
-				<ref bean="testJob3"/>
+				<ref bean="job3"/>
 			</list>
 		</property>
 		<property name="startCronSchedule" value="0 10 * * *" />

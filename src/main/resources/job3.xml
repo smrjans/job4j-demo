@@ -9,12 +9,12 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
   	
-    <bean id="job3InputProducer" class="com.talentica.job4j.test.job3.Job3InputProducer"/>
-    <bean id="job3Task" class="com.talentica.job4j.test.job3.Job3Task" scope="prototype"/>
-    <bean id="job3OutputConsumer" class="com.talentica.job4j.test.job3.Job3OutputConsumer"/> 
+    <bean id="job3InputProducer" class="com.talentica.job4j.demo.job3.Job3InputProducer"/>
+    <bean id="job3Task" class="com.talentica.job4j.demo.job3.Job3Task" scope="prototype"/>
+    <bean id="job3OutputConsumer" class="com.talentica.job4j.demo.job3.Job3OutputConsumer"/> 
  	
-	<bean id="testJob3" class="com.talentica.job4j.impl.queue.QueueJob">
-		<property name="name" value="TestJob3" />
+	<bean id="job3" class="com.talentica.job4j.impl.queue.QueueJob">
+		<property name="name" value="Job3" />
 		<property name="startCronSchedule" value="0 10 * * *" />
 		<property name="stopCronSchedule" value="55 16 * * *" />				
 		<property name="timeZone" value="IST" />
