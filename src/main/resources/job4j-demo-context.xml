@@ -7,7 +7,5 @@
 	
 	<context:annotation-config/>
 	<context:property-placeholder location="classpath:job4j-demo-config.properties" order="-10" ignore-unresolvable="true" ignore-resource-not-found="true"/>
-	
-	<import resource="classpath:job4j-context.xml" />
-	<import resource="classpath:job-flow.xml" />
+	<import resource="classpath:job-flow1.xml" />
 </beans>

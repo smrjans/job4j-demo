@@ -8,7 +8,10 @@
   	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:job4j-demo-context.xml</param-value>
+		<param-value>
+			classpath:job4j-context.xml
+			classpath:job4j-demo-context.xml		
+		</param-value>
 	</context-param>
 	
 	<listener>
