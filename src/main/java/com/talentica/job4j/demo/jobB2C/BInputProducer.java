@@ -1,4 +1,4 @@
-package com.talentica.job4j.demo.job2;
+package com.talentica.job4j.demo.jobB2C;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,9 +6,9 @@ import org.slf4j.LoggerFactory;
 import com.talentica.job4j.api.InputProducer;
 import com.talentica.job4j.demo.model.B;
 
-public class Job2InputProducer implements InputProducer<B> {
-	private static final Logger logger = LoggerFactory.getLogger(Job2InputProducer.class);
-	private int num=1000;
+public class BInputProducer implements InputProducer<B> {
+	private static final Logger logger = LoggerFactory.getLogger(BInputProducer.class);
+	private int num=100000;
 
 	public B produceInput() {
 		B b = null;
@@ -21,7 +21,7 @@ public class Job2InputProducer implements InputProducer<B> {
 		}else{
 			num=1000;
 		}
-		logger.debug("Produced >> "+b);
+		logger.debug("Produced B >> "+b);
 		return b;
 	}
 

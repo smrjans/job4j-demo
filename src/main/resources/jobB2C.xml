@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+  	
+    <bean id="jobB2CInputProducer" class="com.talentica.job4j.demo.jobB2C.BInputProducer"/>
+    <bean id="jobB2CTask" class="com.talentica.job4j.demo.jobB2C.B2CTask" scope="prototype"/>
+    <bean id="jobB2COutputConsumer" class="com.talentica.job4j.demo.jobB2C.COutputConsumer"/> 
+ 	
+	<bean id="jobB2C" class="com.talentica.job4j.impl.queue.QueueJob">
+		<property name="name" value="JobB2C" />
+		<property name="startCronSchedule" value="0 10 * * *" />
+		<property name="stopCronSchedule" value="55 16 * * *" />				
+		<property name="timeZone" value="IST" />
+		
+		<property name="inputProducer" ref="jobB2CInputProducer" />		
+		<property name="task" ref="jobB2CTask" />
+		<property name="outputConsumer" ref="jobB2COutputConsumer" />
+		
+		<property name="maxThreadCount" value="5" />
+  		<property name="threadSleepTime" value="4000" />
+	</bean>
+
+</beans>
+
